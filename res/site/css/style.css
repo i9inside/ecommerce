@@ -1,0 +1,444 @@
+/**MENU SACOLA**/
+.main_menu{width: auto; padding-top: 5%; margin: 10px;}
+.main_menu h1{font-size: 1em;}
+.main_menu li{display: inline-block; margin-left: 15px;}
+.main_menu a{color: #FFF;}
+.main_menu a:hover{color: #D73857;}
+
+/*****LOGO******/
+.main_logo{width: 25.25%; height: 6.875%; margin: 20px  20px 10px  20px;}
+
+
+/***mainMenu***/
+
+.main_nav{float: left; height: 60px;}
+.main_nav li{display: inline-block; padding-left: 25px; padding-right: 30px;}
+.main_nav a{color: #FFF; font-weight: bold;}
+.bt{width: 230px; padding: 10px 0 10px 0; margin-left: 30px;}
+.btnew{width: 200px; margin-right: 90px; margin-top: 2px;}
+.btcomprar{width: 185px;margin-top: 2px; margin-left: 10px;}
+
+
+
+/*****/
+
+.main_condicoes{float: left;}
+.main_condicoes li{display: inline-block; margin-left: 40px; }
+
+.promocoes{ display: block; font-weight: 300; color: #D73857; padding-bottom: 10px; border-right: 6px solid #D73857; margin-bottom: 10px;}
+
+
+/***newletter**/
+.newslatter {background: #D73857;}
+.newslatter img{float: left;  width: 214px; height: 43px;  margin-right: 70px; margin-left: 40px;}
+.newslatter input{background: #822a2a; color:#FFF; font-weight: bold;}
+
+/**produto**/
+.produto:hover{box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.3);}
+.produto h2{padding: 5px;}
+.produto p{padding: 5px; color: #D73857; font-size: 0.9em;}
+.produto a{font-weight: bold; color:#D73857; font-size: 0.7em; padding-bottom: 10px;}
+
+/****/
+
+.frete{padding: 10px;}
+
+/**preco**/
+
+.preco{font-size: 3em;}
+.preco small{color: #400000; font-weight: bold;}
+.preco_parcelado{color: #D73857; padding-bottom: 10px; font-size: 1.2em;}
+
+/**FormPesquisa**/
+.main_pesq{float: left; padding-top: -15px; display: inline-block; background: #FA6B84;}
+.formpesquisa{width: 630px; height: 40px; border: 2px solid #FFF; border-right-style: hidden; padding-top: 7px;}
+.btn_input{width: 63px; height: 40px;}
+.main_oferta{margin-right: 100px;}
+
+/****Shotiicon****/
+.shoticon{padding-left: 30px; background-position: center left; background-repeat: no-repeat; background-size: auto 96%; margin-bottom: 10px;}
+.shoticon_pag{padding: 10px; padding-left: 70px; background-position: center left; background-repeat: no-repeat; background-size: auto 100%; margin-bottom: 20px;}
+.shoticon img{ width: 46px; margin-right: 5px; margin-top: 5px; }
+.shoticon p{float: right; margin-top: 10px; width: 150px; margin-right: 5px; font-weight: bold; color: #D73857;}
+
+.btn-secher{background-image: url(../imagens/lupa.png); background-position: center center; background-repeat: no-repeat; background-size: 50%; cursor: pointer;}
+.radius-left{border-radius: 0px 5px 5px 0px;}
+
+.vcarro{border: 1px solid red; float: right; margin-right: 5px;}
+.shoticon-duvidas{background-image: url('../imagens/duvida.png')}
+.shoticon-fone{background-image: url('../imagens/fone.png')}
+.shoticon-meuspedidos{background-image: url('../imagens/clipboard.png')}
+.shoticon-Atendimento{background-image: url('../imagens/call.png')}
+.shoticon-sacola{background-image: url('../imagens/shopping-bag.png')}
+.shoticon-logon{background-image: url('../imagens/login.png')}
+.shoticon-cadrese{background-image: url('../imagens/man-user.png')}
+
+.shoticon-minhasacola{background-image: url('../imagens/shopping-bag.png')}
+.shoticon-cadastro{background-image: url('../imagens/refresh.png')}
+.shoticon-embalagens{background-image: url('../imagens/pakagens.png')}
+.shoticon-parceiros{background-image: url('../imagens/parceiros.png')}
+.shoticon-seguro{background-image: url('../imagens/cadeado.png')}
+.shoticon-faq{background-image: url('../imagens/faq.png')}
+.shoticon-compras{background-image: url('../imagens/compras.png')}
+.shoticon-pagamentos{background-image: url('../imagens/cartao.png')}
+.shoticon-frete{background-image: url('../imagens/frete.png')}
+.shoticon-home{background-image: url('../imagens/home.png')}
+.shoticon-prancheta{background-image: url('../imagens/prancheta.png')}
+.shoticon-lista{background-image: url('../imagens/lista.png')}
+.shoticon-contact{background-image: url('../imagens/contact.png')}
+.shoticon-cha{background-image: url('../imagens/cha.png')}
+.shoticon-busca{background-image: url('../imagens/search.png')}
+
+
+
+.shoticon-pagamento{background-image: url('../imagens/credit-card.png')}
+.shoticon-box{background-image: url('../imagens/open-box.png')}
+.shoticon-logistica{background-image: url('../imagens/logistica.png')}
+.shoticon_facebook{background-image: url('../imagens/facebook.png')}
+.shoticon_twitter{background-image: url('../imagens/twitter.png')}
+.shoticon_instagram{background-image: url('../imagens/instagram.png')}
+.shoticon_yotube{background-image: url('../imagens/YouTube.png')}
+
+
+
+.shoticon-calcinha{background-image: url('../imagens/panties.png')}
+.shoticon-compra{background-image: url('../imagens/compras.png'); margin-left: 40px;}
+
+
+
+
+/******footer******/
+
+.footer{background: #400000;}
+.central{margin-left: 40px; margin-top:10px; padding: 20px; background: #D73857;}
+.central h1{font-size: 1.6em; }
+.central a{color: #FFF;}
+.central a:hover{color: #400000;}
+
+.card img{width: 218px !important; margin-left: -30px; padding-top: 20px;}
+.card_mini img{width: 218px !important; margin-left: -30px; padding-top: 20px;}
+
+
+.box-fone{margin-left: 40px; margin-top:-20px; padding: 20px; background: #D73857; font-size: 1.2em;}
+.box-fone h1{ font-weight: bold; color: #fff; padding-bottom: 5px;}
+.box-fone li{padding-bottom: 5px; font-weight: bold; color: #FFF;font-size: 1.4em;}
+
+.box-mini{font-weight: 600; font-size: 1.2em; }
+.box-mini h1{font-weight: 600; font-size: 2em; color: #D73857; padding-bottom: 15px;}
+.box-mini li{padding-bottom: 3px;}
+.box-mini a{color: #FFF;}
+.box-mini a:hover{color: #D73857;}
+
+.direitos h1{font-size: 1.6em; color: #FFF; padding-top: 30px;}
+.direitos li{font-size: 1.2em; color: #FFF;}
+
+.meucarrinho{
+    
+}
+.textocarrinho p{
+    width: 130px;
+    margin-top: 4px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 1em;
+}
+.textocarrinho span{
+    color:#FFF; font-weight: bold;
+}
+.textocarrinho img{
+    float: left;
+    margin-right: -30px;
+    margin-top: 5px;
+    width: 40px;
+    padding: 0 10px 0 0;
+    border: 1px black;
+}
+
+
+
+.videoaulas_sidebar_coment{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.videoaulas_sidebar_coment img{
+    float: left;
+    width: 20%;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+.videoaulas_sidebar_coment h1{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.videoaulas_sidebar_coment p{
+    color:#FFF;
+    font-size: 0.8em;
+}
+.videoaulas_sidebar{
+    background: #D73857;
+}
+.videoaulas_sidebar .title{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 5px solid #ccc;
+    margin: 0 35px;
+    
+    color: #FFF;
+    
+}
+
+
+/*******GALERIA JQUERY********/
+/*set a border on the images to prevent shifting*/
+#gallery_01 img{border:2px solid white; width: 105px; height: 67px;} 
+/*Change the colour*/
+.active img{border:2px solid #D73857 !important;}
+
+
+
+/***********PRODUTO*************/
+
+.catproduto{
+    padding: 15px 10px 15px 0px;
+    
+}
+
+.catproduto span{
+    color: #D73857;
+}
+
+.cod{
+    padding: 10px;
+    font-size: 1em;
+    color: #ccc;
+    display: block;
+   
+}
+.codname{
+    padding: 10px 0 0 0px;
+    font-size: 1.6em;
+    color: #D73857;
+    font-weight: bold;
+    font-family: verdana;
+    
+}
+.codava{
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+     margin-right: 10px;
+     display: block;
+     
+}
+
+.codava img{
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;    
+}
+
+.de{
+    padding: 10px;
+    font-size: 1.3em;
+    color: #999999;
+    display: block;
+   
+    text-decoration: line-through;
+    
+}
+.por{
+    padding: 0 10px;
+    font-weight: bold;
+    color: #D73857;
+    display: block;
+   
+}
+.por small{
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #D73857;
+    margin-right: 10px;
+}
+.vezes{
+    padding: 10px 10px 15px 10px;
+    font-size: 1.2em;
+    color: #D73857;
+    display: block;
+    font-weight: bold;
+    
+    
+}
+
+.verparcelas{
+    padding: 10px 10px 10px 0;
+    font-size: 1em;
+    color: #333;
+    display: block;
+    font-weight: bold;
+    
+}
+.verparcelas a{
+    color:#822a2a;
+}
+
+.verparcelas a:hover{
+    text-decoration: underline;
+}
+
+.calcule{
+    color: #460000;
+    font-size: 1em;
+    padding: 22px 10px;
+}
+.cep{
+    padding: 11px;
+    background: #f4f4f4;
+}
+
+.inputcep{
+    padding: 10px;
+    width: 40%;
+}
+.btcep{
+    width: 140px;
+}
+
+.box_compras{
+    padding: 10px;
+    background: #f4f4f4;
+}
+
+/***********CARRINHO***************/
+
+.fotocarrinho img{
+    width: 40px;
+    height: 60px;
+    margin-right: 25px;
+}
+.iconexcluir img{
+    width: 24px;
+    height: 24px;
+}
+.tabcarrinho table{
+    padding-top: 10px;
+    display: block;
+}
+
+.tabcarrinho th{
+    margin: 100%;
+    padding:2px 95px 5px 95px;
+    background: #FB8094;
+    color: #FFF;
+    font-family: verdana;
+}
+
+.tabcarrinho td{
+    padding: 0 10px 0 10px;
+    background: #F1F1F1;
+    
+}
+
+
+/******CEP*******/
+.caluloCep{
+    background: #f1f1f1;
+    padding: 0 0px 0 0px;
+}
+
+.cepTexto{
+    padding: 12px;
+    font-size: 1em;
+    color: #FFF;
+    background: #FB8094;
+}
+
+.cepTexto strong{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.caluloCep input{
+    border: 1px solid #CCC;    
+}
+.cepInput{
+    width: 280px;
+    padding: 20px 10px 10px 10px;
+    margin-left: 250px;    
+}
+
+
+.cepBtn{
+    width: 150px;
+    padding: 20px 10px 10px 10px; 
+    margin-right: 150px;
+}
+.cepBtn input{
+    background: #FB8094;
+    color: #FFF;
+    font-weight: bold;
+    text-shadow: 1px 1px #D73857;
+    border: 1px solid #FB8094;
+}
+.cepTextoAtencao{
+    padding: 12px;
+    font-size: 1em;
+    color: #FB8094;
+    
+}
+.totalcarrinho{
+    background: #F1F1F1;
+}
+.totalcarrinho li{    
+    display: block;
+    border-bottom: 1px solid #ccc;
+    padding: 9px;    
+}
+.totcor{
+    color: #D73857;
+    font-weight: bold;
+    
+}
+.totalcarrinhocupom{
+    background: #F1F1F1;
+    margin: 15px 0 0 20px  ;
+}
+
+.totalcarrinhocupom li{ 
+    
+    display: block;
+    border: 1px solid #FB8094;
+    padding: 9px;
+}
+
+.btfechar{
+    margin: 110px 0 5px 10px;
+}
+
+.inpCup{
+    width: 235px;
+    margin: 5px 0;
+}
+.inptBtn{
+    
+    width: 120px;
+    background: #D73857;
+    border: 1px solid #FB8094;
+    color: #FFF;
+    margin:  5px 0;
+}
+
+.load{
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin: 5px 0 0 0;
+    display: none;
+}
