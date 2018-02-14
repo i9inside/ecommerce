@@ -6,9 +6,9 @@ use Rain\Tpl;
 
     class Mailer {
 
-        const USERNAME = "guilhermemendes.info@gmail.com";
-        const PASSWORD = "<?password?>";
-        const NAME_FROM = "HCODE STORE";
+        const USERNAME = "guilherme.adm@pontofortesa.com.br";
+        const PASSWORD = "7p9bky1111";
+        const NAME_FROM = "KAROL";
 
         private $mail;
 
@@ -39,6 +39,13 @@ use Rain\Tpl;
             //Tell PHPMailer to use SMTP
             $this->mail->isSMTP();
             
+            $this->mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
             //Enable SMTP debugging
             // 0 = off (for production use)
             // 1 = client messages
@@ -46,7 +53,7 @@ use Rain\Tpl;
             $this->mail->SMTPDebug = 0;
             
             //Set the hostname of the mail server
-            $this->mail->Host = 'smtp.gmail.com';
+            $this->mail->Host = 'smtp.pontofortesa.com.br';
             // use
             // $this->mail->Host = gethostbyname('smtp.gmail.com');
             // if your network does not support SMTP over IPv6

@@ -173,5 +173,48 @@
 
             
         }
+
+        public static function validForgotDecrypt($code){
+
+            $idrecovery = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB);
+var_dump($idrecovery);
+            $sql = new sql();
+
+            $results = $sql->select("SELECT *
+                FROM tb_userspasswordsrecoveries a
+                INNER JOIN tb_users b USING(iduser)
+                INNER JOIN tb_persons c USING(idperson)
+                WHERE 
+                    a.idrecovery = 80
+                    AND 
+                    a.dtrecovery IS NULL
+                    AND
+                    date_add(a.dtregister, INTERVAL 1 HOUR) >= now();", array(":idrecovery"=>$idrecovery));
+var_dump($results); 
+                if(count($results) === 0){
+                    throw new \Exception("não foi possivel recuperar a senha");
+                }else{
+                    return $results[0];
+                }
+                
+        }
+        
+        public static function setForgotUsed($idrecovery){
+
+            $sql = new Sql();
+            $sql->query("UPDATE tb_userspasswordsrecoveries SET dtrecovery = NOW() WHERE idrecovery = :idrecovery", array(
+                ":idrecovery"=>$idrecovery
+            ));
+
+        }
+
+        public function setPassword($password){
+            $sql = new sql();
+
+            $sql->query("UPDATE tb_users SET despassword = :password WHERE iduser =:iduser", array(
+                ":password"=>$password,
+                ":iduser"=>$this->getiduser()
+            ));
+        }
     }
 ?>
