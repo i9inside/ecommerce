@@ -12,7 +12,7 @@ namespace Hcode;
                     switch($method){
 
                         case "get":
-                            return $this->values[$fildeName];
+                            return (isset($this->values[$fildeName])) ? $this->values[$fildeName] : NULL;
                         break;
 
                         case "set":

@@ -20,7 +20,7 @@
             ));
 
             if(count($results) === 0){
-                throw new \Exception("Erro encontrado no login", 1);
+                throw new \Exception("Erro encontrado no login");
             }
 
             $data = $results[0];            
@@ -33,7 +33,7 @@
                 $_SESSION[User::SESSION] = $user->getValues();
                 //return $user;
             }else{
-                throw new \Exception("Usuario Inexsitente ou senha Invalida", 1); 
+                throw new \Exception("Usuario Inexsitente ou senha Invalida"); 
             }
         }
 
@@ -82,7 +82,7 @@
             :inadmin )", array(
                 ":desperson"=>$this->getdesperson(),
                 ":deslogin"=>$this->getdeslogin(),
-                ":despassword"=>$this->getdespassword(),
+                ":despassword"=>password_hash($this->getdespassword(), PASSWORD_DEFAULT),
                 ":desemail"=>$this->getdesemail(),
                 ":nrphone"=>$this->getnrphone(),
                 ":inadmin"=>$this->getinadmin()
@@ -134,7 +134,9 @@
 
             $sql = new Sql();
 
-            $results = $sql->select("SELECT * FROM tb_persons a INNER JOIN tb_users b USING(idperson) WHERE a.desemail = :email;", array(":email"=>$email));
+            $results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) WHERE b.desemail = :desemail", array(
+                ":desemail"=>$email
+            ));
             //var_dump($results);
 
             if(count($results) === 0){
@@ -145,17 +147,15 @@
                     "iduser"=>$data["iduser"],
                     "desip"=>$_SERVER["REMOTE_ADDR"]
                 ));
-
-                //var_dump($results2);
-
+                
                 if(count($results2) === 0){
                     throw new \Exception("Não foi possivel recuperar a senha2");
                 }else{
                     $dataRecovery = $results2[0];
-                    $teste = "[Redefinir Senha Karol]";
-                    //$pagina = "forgot";
+                    $teste = "[Redefinir Senha Karol]";                    
 
-                    $code = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, User::SECRET, $dataRecovery["idrecovery"], MCRYPT_MODE_ECB));
+                    $code = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, User::SECRET, $dataRecovery["idrecovery"], MCRYPT_MODE_ECB));		
+                    var_dump($code);	        
 
                     $link = "http://www.karolecommerce.com.br/admin/forgot/reset?code=$code";
 
@@ -175,8 +175,8 @@
         }
 
         public static function validForgotDecrypt($code){
-
-            $idrecovery = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB);
+            
+            $idrecovery = (mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB));
 var_dump($idrecovery);
             $sql = new sql();
 
@@ -185,14 +185,14 @@ var_dump($idrecovery);
                 INNER JOIN tb_users b USING(iduser)
                 INNER JOIN tb_persons c USING(idperson)
                 WHERE 
-                    a.idrecovery = 80
+                    a.idrecovery = :idrecovery;
                     AND 
                     a.dtrecovery IS NULL
                     AND
                     date_add(a.dtregister, INTERVAL 1 HOUR) >= now();", array(":idrecovery"=>$idrecovery));
 var_dump($results); 
                 if(count($results) === 0){
-                    throw new \Exception("não foi possivel recuperar a senha");
+                    throw new \Exception("não foi possivel recuperar a senha3");
                 }else{
                     return $results[0];
                 }
