@@ -24,6 +24,7 @@ namespace Hcode;
             public function setData($data = array()){
                 foreach($data as $key => $values){
                     $this->{"set".$key}($values);
+                    //var_dump($values);
                 }
             }
 
