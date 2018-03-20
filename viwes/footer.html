@@ -147,5 +147,27 @@
 
 </footer>
 <!--final do footer-->
+
+<script src='/res/site/js/jquery.elevateZoom-3.0.8.min.js'></script>
+        <script type="text/javascript" src="/res/site/js/js.js"></script>
+        <script>
+            $("#gallery_01").elevateZoom({
+                gallery: 'gallery_01',
+                cursor: 'pointer',
+                galleryActiveClass: 'active',
+                zoomWindowFadeIn: 500,
+                zoomWindowFadeOut: 500,
+                lensFadeIn: 500,
+                lensFadeOut: 500
+                        //imageCrossfade: true
+            });
+            $("#gallery_01").bind("click", function (e) {
+                var ez = $('#gallery_01').data('elevateZoom');
+                $.fancybox(ez.getGalleryList());
+                return false;
+            });
+
+
+        </script>
 </body>
 </html>

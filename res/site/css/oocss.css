@@ -125,7 +125,7 @@ input{padding: 10px; border: 1px #ccc solid; width: 100%;}
 .box-line{float: left; width: 100%;}
 
 .box-mini{width: 15.75%; margin-right: 2%; }
-.box-small{width: 22.75%; margin-right: 3%; }
+.box-small{width: 22.50%; margin-right: 2%; //border: 1px solid red;}
 .box-medium{width: 30%; margin-right: 5%; }
 .box-large{width: 42.7%; margin-right: 7%; }
 .box-largefull{width: 68%; margin-right: 2%; }

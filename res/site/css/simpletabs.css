@@ -19,8 +19,7 @@ div.simpleTabsContent.currentTab { display:block; }
     font-weight: bold;
     font-family: verdana;
     padding:  0px 5px 5px 5px;
-    font-size: 0.7em;
-    
+    font-size: 0.7em;    
     display: inline-block;
     color: #D52B4D;
 }
@@ -29,8 +28,7 @@ div.simpleTabsContent.currentTab { display:block; }
     font-weight: bold;
     font-family: verdana;
     padding: 0 5px 5px 5px;
-    font-size: 0.7em;
-    
+    font-size: 0.7em;    
     display: inline-block;
 }
 

@@ -11,6 +11,37 @@
             const SESSION = "User";
             const SECRET = "HcodePhp7_secret";
 
+            public static function getFromSession()
+            {
+                $user = new User();
+                if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['iduser'] > 0) {
+                    $user->setData($_SESSION[User::SESSION]);
+                }
+                return $user;
+            }
+
+            public static function checkLogin($inadmin = true)
+	{
+		if (
+			!isset($_SESSION[User::SESSION])
+			||
+			!$_SESSION[User::SESSION]
+			||
+			!(int)$_SESSION[User::SESSION]["iduser"] > 0
+		) {
+			//Não está logado
+			return false;
+		} else {
+			if ($inadmin === true && (bool)$_SESSION[User::SESSION]['inadmin'] === true) {
+				return true;
+			} else if ($inadmin === false) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
         public static function login($login, $password){
 
             $sql = new sql();
@@ -40,17 +71,15 @@
         public static function verifyLogin($inadmin = true)
         {
     
-            if (
-                !isset($_SESSION[User::SESSION])
-                || 
-                !$_SESSION[User::SESSION]
-                ||
-                !(int)$_SESSION[User::SESSION]["iduser"] > 0
-                ||
-                (bool)$_SESSION[User::SESSION]["iduser"] !== $inadmin
-
-            ) {
-                
+            if (User::checkLogin($inadmin)){
+            /**!isset($_SESSION[User::SESSION])
+            || 
+            !$_SESSION[User::SESSION]
+            ||
+            !(int)$_SESSION[User::SESSION]['iduser'] > 0
+            ||
+            (bool)$_SESSION[User::SESSION]['inadmin'] !== $inadmin*/
+           
                 header("Location: /admin/login");
                 exit;
     
@@ -60,13 +89,8 @@
 
         public static function logout()
         {
-
         
-           $_SESSION[User::SESSION]=NULL;
-            //$session = User::SESSION;
-            //var_dump($session);
-           //unset($session);
-           //header("Location /admin/login");
+           $_SESSION[User::SESSION]=NULL;         
 
         }
 
@@ -177,7 +201,7 @@
         public static function validForgotDecrypt($code){
             
             $idrecovery = (mcrypt_decrypt(MCRYPT_RIJNDAEL_128, User::SECRET, base64_decode($code), MCRYPT_MODE_ECB));
-var_dump($idrecovery);
+//var_dump($idrecovery);
             $sql = new sql();
 
             $results = $sql->select("SELECT *
@@ -190,7 +214,7 @@ var_dump($idrecovery);
                     a.dtrecovery IS NULL
                     AND
                     date_add(a.dtregister, INTERVAL 1 HOUR) >= now();", array(":idrecovery"=>$idrecovery));
-var_dump($results); 
+//var_dump($results); 
                 if(count($results) === 0){
                     throw new \Exception("não foi possivel recuperar a senha3");
                 }else{

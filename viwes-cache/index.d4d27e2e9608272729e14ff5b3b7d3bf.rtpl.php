@@ -2,83 +2,26 @@
     <section class="container "> 
         <div class="content">
             <h1 class="promocoes">Promocoes</h1>
-            <article class="box box-small produto">
-                <a href="produto/&p=11"><img src="/res/site/imagens/Produtos/p_01.png"></a>
-                <h2 class="al-center"><a  href="produto/&p=11">Conjunto de Renda Lilas Fio Dental</a></h2>
+            <?php $counter1=-1;  if( isset($products) && ( is_array($products) || $products instanceof Traversable ) && sizeof($products) ) foreach( $products as $key1 => $value1 ){ $counter1++; ?>
+            <article class="produto box box-small">
+                <a href="/products/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"></a>
+                <h2 class="al-center"><a  href="/products/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></h2>
                 <p class="al-left">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet
                     dolore magna aliquam erat volutpat.</p>
-                <div class="preco al-center"><small>R$ 49,50</small></div>
+                <div class="preco al-center"><small>R$ <?php echo formatPrice($value1["vlprice"]); ?></small></div>
                 <h3 class="preco_parcelado al-center"></h3>
                 <div class="">
-                    <form id="form1" name="frmcarrinho" method="post" action="carrinho">
-                        <input name="txt_preco" 	type="hidden" id="txt_preco" value = "9020.00" />
-                        <input name="txt_qtde" 		type="hidden" id="txt_qtde" value = "1" />
-                        <input type="hidden" 		name="id_produto" value = "11"/>
-                        <input class="btn btn-red bt radius" type="submit" 		name="imageField" value="Comprar"  />
+                    <form  action="/cart/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add">
+                        
+                        <button class="btn btn-red bt radius" type="submit">Comprar</button>
                     </form>
+                    
                     <div class="frete al-center"><b >FRETE </b><b class="al-center">GRÁTIS</b></div>
                     <div class="preco_parcelado al-center" ><font><b>6x</b> de 16,63 nos cartões</font><img src=""></div>
                 </div>
             </article>
-            <article class="box box-small produto">
-                <a href="produto/&p=11"><img src="/res/site/imagens/Produtos/p_02.png"></a>
-                <h2 class="al-center"><a  href="produto/&p=11">Conjunto de Renda Lilas Fio Dental</a></h2>
-                <p class="al-left">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.</p>
-                <div class="preco al-center"><small>R$ 49,50</small></div>
-                <h3 class="preco_parcelado al-center"></h3>
-                <div class="">
-                    <form id="form1" name="frmcarrinho" method="post" action="carrinho">
-                        <input name="txt_preco" 	type="hidden" id="txt_preco" value = "9020.00" />
-                        <input name="txt_qtde" 		type="hidden" id="txt_qtde" value = "1" />
-                        <input type="hidden" 		name="id_produto" value = "11"/>
-                        <input class="btn btn-red bt radius" type="submit" 		name="imageField" value="Comprar"  />
-                    </form>
-                    <div class="frete al-center"><b >FRETE </b><b class="al-center">GRÁTIS</b></div>
-                    <div class="preco_parcelado al-center" ><font><b>6x</b> de 16,63 nos cartões</font><img src=""></div>
-                </div>
-            </article>
-            <article class="box box-small produto">
-                <a href="produto/&p=11"><img src="/res/site/imagens/Produtos/p_03.png"></a>
-                <h2 class="al-center"><a  href="produto/&p=11">Conjunto de Renda Lilas Fio Dental</a></h2>
-                <p class="al-left">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.</p>
-                <div class="preco al-center"><small>R$ 49,50</small></div>
-                <h3 class="preco_parcelado al-center"></h3>
-                <div class="">
-                    <form id="form1" name="frmcarrinho" method="post" action="carrinho">
-                        <input name="txt_preco" 	type="hidden" id="txt_preco" value = "9020.00" />
-                        <input name="txt_qtde" 		type="hidden" id="txt_qtde" value = "1" />
-                        <input type="hidden" 		name="id_produto" value = "11"/>
-                        <input class="btn btn-red bt radius" type="submit" 		name="imageField" value="Comprar"  />
-                    </form>
-                    <div class="frete al-center"><b >FRETE </b><b class="al-center">GRÁTIS</b></div>
-                    <div class="preco_parcelado al-center" ><font><b>6x</b> de 16,63 nos cartões</font><img src=""></div>
-                </div>
-            </article>
-            <article class="box box-small produto last">
-                <a href="produto/&p=11"><img src="/res/site/imagens/Produtos/p_04.png"></a>
-                <h2 class="al-center"><a  href="produto/&p=11">Conjunto de Renda Lilas Fio Dental</a></h2>
-                <p class="al-left">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet
-                    dolore magna aliquam erat volutpat.</p>
-                <div class="preco al-center"><small>R$ 49,50</small></div>
-                <h3 class="preco_parcelado al-center"></h3>
-                <div class="">
-                    <form id="form1" name="frmcarrinho" method="post" action="carrinho">
-                        <input name="txt_preco" 	type="hidden" id="txt_preco" value = "9020.00" />
-                        <input name="txt_qtde" 		type="hidden" id="txt_qtde" value = "1" />
-                        <input type="hidden" 		name="id_produto" value = "11"/>
-                        <input class="btn btn-red bt radius" type="submit" 		name="imageField" value="Comprar"  />
-                    </form>
-                    <div class="frete al-center"><b >FRETE </b><b class="al-center">GRÁTIS</b></div>
-                    <div class="preco_parcelado al-center" ><font><b>6x</b> de 16,63 nos cartões</font><img src=""></div>
-                </div>
-            </article>
-            <div class="clear"></div>
+            <?php } ?>
             <!--bloco produto-->
         </div> 
     </section>

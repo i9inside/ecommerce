@@ -15,7 +15,6 @@ $app->get('/admin/users', function(){
 
 
 
-
 $app->get('/admin/users/create', function(){
         User::verifyLogin(); 
         $page = new PageAdmin();
