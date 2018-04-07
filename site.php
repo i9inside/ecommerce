@@ -6,7 +6,7 @@ use \Hcode\Model\Cart;
 
 $app->get('/', function() {
     $products = Product::listAllqtd();
-    $page = new page();
+    $page = new Page();    
     $page->setTpl("index",[
         'products'=>Product::checkList($products)
     ]);
@@ -68,7 +68,8 @@ $app->get("/cart", function(){
     $page = new Page();
     $page->setTpl("cart",[
         'cart'=>$cart->getValues(),
-        'products'=>$cart->getProducts()
+        'products'=>$cart->getProducts(),
+        'error'=>Cart::getMsgError()
     ]);
 });
 
@@ -78,8 +79,13 @@ $app->get("/cart/:idproduct/add", function($idproduct){
     $product->get((int)$idproduct);
     
     $cart = Cart::getFromSession();
+
+    $qtd = (isset($_GET['qtd'])) ? (int)$_GET['qtd'] : 1;
     
-    $cart->addProduct($product);
+
+    for ($i=0; $i < $qtd; $i++) { 
+        $cart->addProduct($product);
+    }
    
     header("Location: /cart");
     exit;
@@ -97,10 +103,20 @@ $app->get("/cart/:idproduct/minus", function($idproduct){
 $app->get("/cart/:idproduct/remove", function($idproduct){
     $product = new Product();
     $product->get((int)$idproduct);
-    //$cart = Cart::getFromSession();
+    $cart = Cart::getFromSession();
     $cart->removeProduct($product, true);
     header("Location: /cart");
     exit;
+});
+
+$app->post("/cart/freight", function(){
+
+    $cart = Cart::getFromSession();
+
+    $cart->setFreight($_POST['zipcode']);
+    
+    header("Location: /cart");
+   exit;
 });
 
 

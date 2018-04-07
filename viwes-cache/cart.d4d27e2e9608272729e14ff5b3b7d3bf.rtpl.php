@@ -13,43 +13,52 @@
                         <th class="tg-yw4l">Total</th>
                     </tr>
                      <?php $counter1=-1;  if( isset($products) && ( is_array($products) || $products instanceof Traversable ) && sizeof($products) ) foreach( $products as $key1 => $value1 ){ $counter1++; ?>
-                    <tr class="al-rigth">
-                       
-                        <td class="al-left fotocarrinho"><a href="/products/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></td>
-                        <td class="al-center minus"><input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1"></td>
+                    <tr class="al-rigth buttons_added">  
+                        
+                        <td class="al-left fotocarrinho"><a href="/products/<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><img src="<?php echo htmlspecialchars( $value1["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["desproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></td>                          
+                        <td class="al-center ">
+                            <input type="button" class="minus" value="-" onclick="window.location.href = '/cart/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/minus'">
+                            <input type="number" size="4" class="qtd_product" title="Qty" value="<?php echo htmlspecialchars( $value1["nrqtd"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" min="0" step="1">
+                            <input type="button" class="plus" value="+" onclick="window.location.href = '/cart/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add'">
+                        </td>                        
                         <td class="al-center iconexcluir"><a href="/cart/<?php echo htmlspecialchars( $value1["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/remove"><img src="/res/site/imagens/excluir.png"></a></td>
                         <td class="al-center">R$ <?php echo formatPrice($value1["vlprice"]); ?></td>
-                        <td class="al-center">R$ <?php echo formatPrice($value1["vltotal"]); ?></td>
+                        <td class="al-center">R$ <?php echo formatPrice($value1["vltotal"]); ?></td>                        
                     </tr>
                     <?php } ?>
                 </table>
-                
+
             </div>
             <div class="content">
-                <form action="" method="">
+               
                     <div class="box box-full">
-                        <div class="box box-largefull caluloCep">
-                            <ul>
-                                <li class="al-center cepTexto">Simule o prazo de entrega e o frete para seu CEP abaixo:</li>
-                                <li class="cepInput fl-left"><input type="text"></li>
-                                <li class="cepBtn fl-rigth"><input type="submit" value="Calcule o Cep"><img class="load fl-rigth" src="imagens/load.gif"/></li>
-                                <li class="fl-left cepTextoAtencao"><strong>Atenção:</strong> 
-                                    O prazo começa a contar a partir da aprovação do pagamento.
-                                    Os produtos podem ser entregues separadamente.</li>
-                            </ul>
-
-                        </div>
+                         <form method="post" action="/cart/freight" >
+                            <div class="box box-largefull caluloCep">
+                                <ul>
+                                    <li class="al-center cepTexto">Calcule frete para seu CEP abaixo:</li>
+                                    <li class="cepInput fl-left"><input type="text" name="zipcode"></li>
+                                    <li class="cepBtn fl-rigth"><input type="submit" value="Calcule o Cep"><img class="load fl-rigth" src="imagens/load.gif"/></li>
+                                   <li class="fl-left cepTextoAtencao"><strong>Atenção:</strong> 
+                                     O prazo começa a contar a partir da aprovação do pagamento.
+                                   Os produtos podem ser entregues separadamente.</li>
+                                </ul>
+                            </div>
+                        </form>                        
                         <div class="totalcarrinho fl-rigth last box-medium">
                             <ul>
                                 <li class="al-center cepTexto">Carrinho</li>
-                                <li class="fl-left totcor">1 Produto</li>
-                                <li class="al-rigth">R$ 29,50</li>
+                                <li class="fl-left totcor">Subtotal</li>
+                                
+                                <li class="al-rigth"><?php echo htmlspecialchars( $cart["vlsubtotal"], ENT_COMPAT, 'UTF-8', FALSE ); ?></li>
+                                
+                                <li class="fl-left totcor">Prazo de Entrega</li>
+                                <li class="al-rigth"><?php echo htmlspecialchars( $cart["nrdays"] + 4, ENT_COMPAT, 'UTF-8', FALSE ); ?> Dias</li>
                                 <li class="fl-left totcor">Frete</li>
-                                <li class="al-rigth">R$ 30,15 </li>
+                                <li class="al-rigth"><?php if( ($cart["vltotal"] > 299) ){ ?> Frete Gratis <?php }else{ ?> R$ <?php echo formatPrice($cart["vlfreight"]); ?><?php } ?></li>
                                 <li class="fl-left totcor">Cupom Desconto</li>
-                                <li class="al-rigth">R$ 30,55 </li>
+                                <li class="al-rigth"> - </li>
                                 <li class="fl-left totcor">Total</li>
-                                <li class="al-rigth totcor">R 31,90</li>
+                                <li class="al-rigth totcor">R$ <?php echo formatPrice($cart["vltotal"]); ?></li>
 
                             </ul>
 
@@ -73,7 +82,7 @@
                     <div class="finalizar box-large">
 
                     </div>
-                </form>
+                
 
         </section>
         <!--final do header-->

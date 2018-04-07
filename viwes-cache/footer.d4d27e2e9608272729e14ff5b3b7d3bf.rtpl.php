@@ -1,4 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><footer class="container">
+        <?php if( URL == '/' ){ ?>
     <div class="content newslatter">
         <img src="/res/site/imagens/logo_branco.png">
         <form action="" method="post">
@@ -19,6 +20,7 @@
     </div>
     <div class="clear"></div>
 </div>
+
 <aside class="container videoaulas_sidebar">
     <div class="content">
         <div>
@@ -74,6 +76,7 @@
         </div>
         <div class="clear"></div>
     </div>
+    <?php } ?>
 </aside>
 <footer class="container footer">
     <section class="content">

@@ -24,7 +24,6 @@ $app->get("/admin/products/create", function(){
 });
 
 
-
 $app->post("/admin/products/create", function(){
 	User::verifyLogin();
 	$product = new Product();

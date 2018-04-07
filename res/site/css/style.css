@@ -18,8 +18,6 @@
 .btnew{width: 200px; margin-right: 90px; margin-top: 2px;}
 .btcomprar{width: 185px;margin-top: 2px; margin-left: 10px;}
 
-
-
 /*****/
 
 .main_condicoes{float: left;}
@@ -355,6 +353,35 @@
     padding: 0 10px 0 10px;
     background: #F1F1F1;
     
+}
+
+.minus{
+    width: 40px;
+    
+}
+.plus{
+    width: 40px;
+  
+}
+
+.qtd_product{
+    width: 120px;   
+    text-align: center;
+}
+
+.qtd_product_detailes{
+    margin-top: 52px;
+    display: block;
+    border: 1px solid red;
+   margin-left: 120px;
+   width: 70px;   
+   text-align: center; 
+}
+
+.bt_left{
+    float: right;
+    margin-right:60px;
+    margin-top: -42px;    
 }
 
 

@@ -10,10 +10,10 @@
                         <img id="gallery_01" src="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-zoom-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" width="200" height="600"/> 
 
                         <div id="gallery_01" >
-                            <a href="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-zoom-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                            <a href="#" data-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-zoom-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                 <img id="img_01" src="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" />
                             </a> 
-                            <a href="/res/site/images/large/image1.jpg" data-image="/res/site/images/small/image1.png" data-zoom-image="/res/site/images/large/image1.jpg">
+                            <a href="#" data-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" data-zoom-image="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                 <img id="img_01" src="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" />
                             </a>
                             <a href="#" data-image="/res/site/images/small/image3.png" data-zoom-image="/res/site/images/large/image3.jpg">
@@ -40,9 +40,19 @@
 
                             <span class="vezes box-large fl-left">ou 6x R$ <?php echo formatPrice(($product["vlprice"]) / 6); ?> sem juros</span>
                             <div>
-                                <span class="box-large fl-rigth"><input class="btn btn-red bt" type="submit" name="" value="Comprar"/></span>  
+                                <form action="/cart/<?php echo htmlspecialchars( $product["idproduct"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add">
+                                     <input type="number"  class="qtd_product_detailes" title="Qty" value="1" min="0" name="qtd" step="1">
+                                    <span class="box-large"><input class="btn btn-red bt bt_left" type="submit" value="Comprar"/></span>  
+                                </form> 
                                 <div class="clear"></div>
                             </div>
+                            <tr class="al-rigth buttons_added">  
+                        
+                        <div class="al-left">
+                            
+                                                                
+                                                      
+                        </div>
                         </div>
 
                         <span class="verparcelas al-center fl-none"><a href="#">ver parcelas</a></span>

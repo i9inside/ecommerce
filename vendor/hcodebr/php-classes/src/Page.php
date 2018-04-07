@@ -25,7 +25,7 @@ class Page{
         
         tpl::configure($config);
         $this->tpl = new tpl;
-        $r = $this->tpl->assign("user", $_SESSION["User"]);
+        $r = $this->tpl->assign("User", $_SESSION["User"]);
         //var_dump($r);
         $this->setData($this->options["data"]);
         if($this->options["header"] === true) $this->tpl->draw("header");
